@@ -13,7 +13,7 @@ function Drink({
   const [isImageLoaded, setIsImageLoaded] = React.useState(false);
 
   const style = isImageLoaded
-    ? { transform: "scale(1)", transition: "transform 100ms ease-in-out" }
+    ? { transform: "scale(1)", transition: "transform 100ms ease-out" }
     : { transform: "scale(0)" };
 
   return (
@@ -45,6 +45,7 @@ const Wrapper = styled.div`
   gap: 32px;
   margin: 0 auto;
   max-width: 300px;
+  will-change: transform;
 `;
 
 const Title = styled.h1`

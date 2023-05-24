@@ -118,6 +118,7 @@ const LoadingWrapper = styled.div`
   inset: 0;
   margin: auto;
 
+  will-change: transform;
   transform-origin: -50% -50%;
   animation: ${shake} 300ms infinite alternate;
 `;

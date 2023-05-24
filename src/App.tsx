@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
+import jazzBarMp4 from "/src/assets/videos/jazz-bar.mp4";
+import jazzBarWebm from "/src/assets/videos/jazz-bar.webm";
 import Drink from "./components/Drink";
 import Shaker, { ShakerSvg } from "./components/Shaker";
 
@@ -16,8 +18,8 @@ function App() {
     <Wrapper>
       <BgVideo>
         <video autoPlay loop muted playsInline>
-          <source src="src/assets/videos/jazz-bar.mp4" type="video/mp4" />
-          <source src="src/assets/videos/jazz-bar.webm" type="video/webm" />
+          <source src={jazzBarMp4} type="video/mp4" />
+          <source src={jazzBarWebm} type="video/webm" />
         </video>
       </BgVideo>
       <MaxWidthWrapper>

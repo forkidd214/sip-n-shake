@@ -37,16 +37,20 @@ const reshapeData = (data: RawData | null) => {
   for (let i = 1; i < 16; i++) {
     const ingredientKey: StrIngredientKey = `strIngredient${i}`;
     const measureKey: StrMeasureKey = `strMeasure${i}`;
+
     if (rawDrink[ingredientKey] == null) {
       break;
     }
 
+    const ingredientMeasure = `${
+      rawDrink[measureKey] === null ? "" : rawDrink[measureKey]
+    }`;
     const ingredientUrlEncoded = rawDrink[ingredientKey]
       ?.toLowerCase()
       .replace(" ", "%20");
     ingredients.push({
-      text: `${rawDrink[measureKey]} ${rawDrink[ingredientKey]}`,
-      thumnail: `https://www.thecocktaildb.com/images/ingredients/${ingredientUrlEncoded}-Medium.png`,
+      text: `${ingredientMeasure} ${rawDrink[ingredientKey]}`,
+      thumnail: `https://www.thecocktaildb.com/images/ingredients/${ingredientUrlEncoded}-Small.png`,
     });
   }
 
